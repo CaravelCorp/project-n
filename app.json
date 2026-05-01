@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "project-n",
+    "slug": "project-n",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "projectn",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+
+    "ios": {
+      "supportsTablet": true
+    },
+
+    "android": {
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+
+    "web": {
+      "output": "static"
+    },
+
+    "plugins": [
+      "expo-router"
+    ],
+
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
