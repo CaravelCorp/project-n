@@ -6,20 +6,20 @@ const getButtonPrimaryStyle = (pressed) => ({
   marginTop: 15,
   alignItems: "center",
 
-  // ANDROID
-  elevation: pressed ? 4 : 12,
+  // ANDROID (mais suave)
+  elevation: pressed ? 3 : 6,
 
-  // iOS
+  // iOS (igual aos ícones)
   shadowColor: "#000",
-  shadowOpacity: 0.25,
-  shadowRadius: 6,
+  shadowOpacity: 0.1,
+  shadowRadius: 10,
   shadowOffset: {
     width: 0,
-    height: pressed ? 2 : 6,
+    height: pressed ? 2 : 5,
   },
 
   // efeito de clique
   transform: [{ translateY: pressed ? 2 : 0 }],
 });
 
-export default getButtonPrimaryStyle
+export default getButtonPrimaryStyle;
