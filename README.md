@@ -11,17 +11,18 @@ project-n
 ├─ README.md
 └─ src
    ├─ app
-   │  └─ index.jsx
+   │  ├─ index.jsx
+   │  └─ layout
+   │     ├─ login.jsx
+   │     └─ register.jsx
    ├─ assets
    │  └─ svg
    │     └─ Logo.svg
    ├─ components
    │  └─ safe-area.jsx
-   ├─ layout
-   │  ├─ login.jsx
-   │  └─ register.jsx
    └─ styles
       ├─ button-primary.jsx
+      ├─ button-secodary.jsx
       └─ global.jsx
 
 ```
