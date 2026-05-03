@@ -1,7 +1,9 @@
 import Logo from "@/assets/svg/Logo.svg";
 import { Text, View, TextInput, Pressable } from "react-native";
+import getButtonPrimaryStyle from "@/styles/button-primary";
+import Styles from "@/styles/global";
+import Layout from "@/components/Layout";
 import { useState } from "react";
-import { useRef } from "react";
 
 export default function Index() {
   const [usuario, setUsuario] = useState("");
@@ -9,20 +11,15 @@ export default function Index() {
 
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 20,
-      }}
+      style={ Styles.viewLogin }
     >
       <Logo width={100} height={100} />
 
-      <Text style={{ fontWeight: "bold", fontSize: 30 }}>
+      <Text style={ Styles.textTitle }>
         DotNotes
       </Text>
 
-      <Text style={{ color: "#808080", marginBottom: 15, fontSize: 15 }}>
+      <Text style={ Styles.textForgetPass }>
         Aplicativo de Anotações
       </Text>
 
@@ -31,15 +28,7 @@ export default function Index() {
         onChangeText={setUsuario}
         placeholder="Usuário"
         placeholderTextColor="#888"
-        style={{
-          width: "80%",
-          borderWidth: 1,
-          borderColor: "#888",
-          borderRadius: 10,
-          padding: 12,
-          fontSize: 16,
-          marginTop: 15,
-        }}
+        style={ Styles.textInput }
       />
 
       <TextInput
@@ -47,96 +36,34 @@ export default function Index() {
         onChangeText={setSenha}
         placeholder="Senha"
         placeholderTextColor="#888"
-        style={{
-          width: "80%",
-          borderWidth: 1,
-          borderColor: "#888",
-          borderRadius: 10,
-          padding: 12,
-          fontSize: 16,
-          marginTop: 15,
-        }}
+        style={ Styles.textInput }
       />
 
       <Pressable
         onPress={() => {}}
-        style={({ pressed }) => ({
-          width: "80%",
-          backgroundColor: "#000",
-          borderRadius: 10,
-          padding: 12,
-          marginTop: 15,
-          alignItems: "center",
-
-          // sombra (iOS)
-          shadowColor: "#000",
-          shadowOffset: {
-            width: 0,
-            height: pressed ? 2 : 6, // muda altura da sombra
-          },
-          shadowOpacity: 0.2,
-          shadowRadius: 4,
-
-          // dois tipos de Sombras, pois: "shadow*" não funciona no Android e "elevation" não funciona no IOS.
-          // sombra (Android)
-          elevation: pressed ? 2 : 8,
-
-          // efeito de "afundar"
-          transform: [
-            { translateY: pressed ? 2 : 0 }
-          ],
-        })}
+        style={({ pressed }) => getButtonPrimaryStyle(pressed)}
       >
-        <Text style={{ fontSize: 16, color: "#FFF" }}>
+        <Text style={ Styles.textButton }>
           Entrar
         </Text>
       </Pressable>
 
       <Pressable
         onPress={() => {}}
-        style={({ pressed }) => ({
-          width: "80%",
-          backgroundColor: "#000",
-          borderRadius: 10,
-          padding: 12,
-          marginTop: 15,
-          alignItems: "center",
-
-          // dois tipos de Sombras, pois: "shadow*" não funciona no Android e "elevation" não funciona no IOS.
-          // sombra (iOS)
-          shadowColor: "#000",
-          shadowOffset: {
-            width: 0,
-            height: pressed ? 2 : 6, // muda altura da sombra
-          },
-          shadowOpacity: 0.2,
-          shadowRadius: 4,
-
-          // sombra (Android)
-          elevation: pressed ? 2 : 8,
-
-          // efeito de "afundar"
-          transform: [
-            { translateY: pressed ? 2 : 0 }
-          ],
-        })}
+        style={({ pressed }) => getButtonPrimaryStyle(pressed)}
       >
-        <Text style={{ fontSize: 16, color: "#FFF" }}>
+        <Text style={ Styles.textButton }>
           Registrar
         </Text>
       </Pressable>
 
-        
       <Pressable
         onPress={() => {}}
-        style={{
-          marginTop: 15,
-        }}
       >
-        <Text style={{ color: "#888", fontSize: 15 }}>
+        <Text style={ Styles.textForgetPass }>
           Esqueci minha senha
         </Text>
-      </Pressable>
+      </Pressable>  
     </View>
   );
 }
