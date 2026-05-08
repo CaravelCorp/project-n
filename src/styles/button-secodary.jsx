@@ -6,20 +6,15 @@ const getButtonSecondaryStyle = (pressed) => ({
   marginTop: 15,
   alignItems: "center",
 
-  // ✅ borda preta
-  borderWidth: 2,
-  borderColor: "#000",
+  // sombra padronizada ( Android & IOS )
+  elevation: pressed ? 3 : 8,
 
-  // ANDROID
-  elevation: pressed ? 4 : 12,
-
-  // iOS
   shadowColor: "#000",
-  shadowOpacity: 0.25,
-  shadowRadius: 6,
+  shadowOpacity: 0.22,
+  shadowRadius: pressed ? 2 : 4,
   shadowOffset: {
     width: 0,
-    height: pressed ? 2 : 6,
+    height: pressed ? 2 : 4,
   },
 
   // efeito de clique
