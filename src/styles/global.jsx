@@ -34,6 +34,10 @@ const Styles = StyleSheet.create({
         fontWeight: "bold", 
         fontSize: 30,
     },
+    textSubTitle: {
+        fontWeight: "bold", 
+        fontSize: 15,
+    },
     wrapper: {
         flexDirection: "row",
         justifyContent: "center",

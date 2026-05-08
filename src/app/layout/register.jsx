@@ -8,28 +8,13 @@ import SafeArea from "@/components/safe-area";
 import { useState } from "react";
 import { useRouter } from "expo-router";
 
-function SocialIcon({ label, color }) {
-  const [active, setActive] = useState(false);
-
+function SocialIcon({ label }) {
   return (
-    <Pressable
-      onPressIn={() => setActive(true)}
-      onPressOut={() => setActive(false)}
-      style={[
-        Styles.icon,
-        active && { backgroundColor: color },
-      ]}
-    >
-      {active && (
-        <View style={[Styles.tooltip, { backgroundColor: color }]}>
-          <Text style={Styles.tooltipText}>{label}</Text>
-        </View>
-      )}
-
-      <Text style={[Styles.iconText, active && { color: "#fff" }]}>
+    <View style={Styles.icon}>
+      <Text style={Styles.iconText}>
         {label[0]}
       </Text>
-    </Pressable>
+    </View>
   );
 }
 
@@ -115,11 +100,13 @@ export default function Login() {
           Voltar
         </Text>
       </Pressable>
+
       <View style={Styles.wrapper}>
       <Pressable onPress={openInstagram}>
         <FontAwesome name="instagram" size={28} color="#E4405F" />
       </Pressable>
       </View>
+      
     </View>
   </SafeArea>
   );
