@@ -14,19 +14,7 @@ export default function Login() {
   const [senha, setSenha] = useState("");
   const [confsenha, setConfSenha] = useState("");
   const router = useRouter();
-  const openInstagram = async () => {
-  const appUrl = "https://www.instagram.com/arcan_studio_tattoo/";
-  const webUrl = "https://www.instagram.com/arcan_studio_tattoo/";
-
-  const canOpen = await Linking.canOpenURL(appUrl);
-
-  if (canOpen) {
-    await Linking.openURL(appUrl);
-  } else {
-    await Linking.openURL(webUrl);
-  }
-};
-
+  
   return (
   <SafeArea>
     <View
@@ -63,6 +51,7 @@ export default function Login() {
         onChangeText={setSenha}
         placeholder="Senha"
         placeholderTextColor="#888"
+        secureTextEntry
         style={ Styles.textInput }
       />
       <TextInput
@@ -70,6 +59,7 @@ export default function Login() {
         onChangeText={setConfSenha}
         placeholder="Confirmar Senha"
         placeholderTextColor="#888"
+        secureTextEntry
         style={ Styles.textInput }
       />
 

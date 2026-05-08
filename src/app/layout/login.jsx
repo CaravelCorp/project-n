@@ -50,6 +50,7 @@ export default function Login() {
           onChangeText={setSenha}
           placeholder="Senha"
           placeholderTextColor="#888"
+          secureTextEntry
           style={Styles.textInput}
         />
 
