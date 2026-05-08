@@ -9,13 +9,19 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [mode, setMode] = useState("email");
 
+  const router = useRouter();
+
   return (
     <SafeArea>
-      <View style={Styles.viewLogin}>   
-
-        <Pressable onPress={() => {}}>
-            
+    <View style={Styles.header}>
+        <Pressable onPress={() => router.back()}>
+            <Text style={{ fontSize: 30, color: "#000" }}>
+                {"<"}
+            </Text>
         </Pressable>
+    </View>
+      
+      <View style={Styles.viewLogin}>
 
         <Text style={Styles.textTitle}>
           Encontre sua conta

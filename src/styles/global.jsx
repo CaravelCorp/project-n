@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const Styles = StyleSheet.create({
     viewLogin: {
@@ -8,21 +10,36 @@ const Styles = StyleSheet.create({
         padding: 20,
         backgroundColor: "#FFF",
     },
+
     footer: {
-        position: "absolute",
-        bottom: 20,
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
+        marginTop: "auto",
+        paddingBottom: 15,
     },
+
+    header: {
+        width: "100%",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "flex-start",
+
+        paddingTop: height * 0.02,      // ~2% da altura da tela
+        paddingBottom: height * 0.015,  // ~1.5%
+        paddingHorizontal: width * 0.05 // ~5% da largura
+    },
+
     textButtonW: {
-        fontSize: 16, 
+        fontSize: 16,
         color: "#FFF",
     },
+
     textButtonB: {
-        fontSize: 16, 
+        fontSize: 16,
         color: "#000",
     },
+
     textInput: {
         width: "80%",
         borderWidth: 1,
@@ -32,24 +49,30 @@ const Styles = StyleSheet.create({
         fontSize: 16,
         marginTop: 15,
     },
+
     textForgetPass: {
-        color: "#888", 
+        color: "#888",
         fontSize: 15,
         margin: 15,
+        textAlign: "center",
     },
+
     textTitle: {
-        fontWeight: "bold", 
+        fontWeight: "bold",
         fontSize: 30,
     },
+
     textSubTitle: {
-        fontWeight: "bold", 
+        fontWeight: "bold",
         fontSize: 15,
     },
+
     wrapper: {
         flexDirection: "row",
         justifyContent: "center",
-        marginTop: 30,
+        marginTop: 20,
     },
+
     icon: {
         width: 50,
         height: 50,
@@ -64,10 +87,12 @@ const Styles = StyleSheet.create({
         shadowRadius: 10,
         shadowOffset: { width: 0, height: 5 },
     },
+
     iconText: {
-        ontSize: 18,
+        fontSize: 18,
         color: "#000",
     },
+
     tooltip: {
         position: "absolute",
         top: -45,
@@ -75,11 +100,11 @@ const Styles = StyleSheet.create({
         paddingVertical: 5,
         borderRadius: 5,
     },
+
     tooltipText: {
         color: "#fff",
         fontSize: 12,
     },
-})
+});
 
-
-export default Styles
+export default Styles;

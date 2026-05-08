@@ -8,16 +8,6 @@ import SafeArea from "@/components/safe-area";
 import { useState } from "react";
 import { useRouter } from "expo-router";
 
-function SocialIcon({ label }) {
-  return (
-    <View style={Styles.icon}>
-      <Text style={Styles.iconText}>
-        {label[0]}
-      </Text>
-    </View>
-  );
-}
-
 export default function Login() {
   const [email, setEmail] = useState("");
   const [usuario, setUsuario] = useState("");
@@ -101,15 +91,9 @@ export default function Login() {
         </Text>
       </Pressable>
 
-      <View style={Styles.wrapper}>
-      <Pressable onPress={openInstagram}>
-        <FontAwesome name="instagram" size={28} color="#E4405F" />
-      </Pressable>
-      </View>
-
       <View style={Styles.footer}>
         <Text style={Styles.textForgetPass}>
-          Copyright © 2026 CaravelCorp
+          Copyright © 2026 CaravelCorp.
         </Text>
       </View>
 
