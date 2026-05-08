@@ -93,6 +93,12 @@ export default function Login() {
         </Pressable>
         </View>
 
+        <View style={Styles.footer}>
+          <Text style={Styles.textForgetPass}>
+            Copyright © 2026 CaravelCorp
+          </Text>
+        </View>
+        
       </View>
     </SafeArea>
   );

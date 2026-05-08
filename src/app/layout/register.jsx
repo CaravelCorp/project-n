@@ -106,7 +106,13 @@ export default function Login() {
         <FontAwesome name="instagram" size={28} color="#E4405F" />
       </Pressable>
       </View>
-      
+
+      <View style={Styles.footer}>
+        <Text style={Styles.textForgetPass}>
+          Copyright © 2026 CaravelCorp
+        </Text>
+      </View>
+
     </View>
   </SafeArea>
   );

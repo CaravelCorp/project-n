@@ -13,6 +13,10 @@ export default function Login() {
     <SafeArea>
       <View style={Styles.viewLogin}>   
 
+        <Pressable onPress={() => {}}>
+            
+        </Pressable>
+
         <Text style={Styles.textTitle}>
           Encontre sua conta
         </Text>

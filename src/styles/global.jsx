@@ -8,6 +8,13 @@ const Styles = StyleSheet.create({
         padding: 20,
         backgroundColor: "#FFF",
     },
+    footer: {
+        position: "absolute",
+        bottom: 20,
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+    },
     textButtonW: {
         fontSize: 16, 
         color: "#FFF",
