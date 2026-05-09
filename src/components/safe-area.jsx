@@ -6,7 +6,6 @@ export default function SafeArea({ children }) {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: "#FFF",
       }}
       edges={["top", "bottom", "left", "right"]}
     >

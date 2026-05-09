@@ -1,92 +1,122 @@
 import Logo from "@/assets/svg/Logo.svg";
-import { Text, View, TextInput, Pressable } from "react-native";
+import { useState } from "react";
+import { useRouter } from "expo-router";
+
+import {
+  Text,
+  View,
+  TextInput,
+  Pressable,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
+
 import getButtonPrimaryStyle from "@/styles/button-primary";
 import getButtonSecondaryStyle from "@/styles/button-secodary";
 import Styles from "@/styles/global";
 import SafeArea from "@/components/safe-area";
-import { useState } from "react";
-import { useRouter } from "expo-router";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
   const [confsenha, setConfSenha] = useState("");
+
   const router = useRouter();
-  
+
   return (
-  <SafeArea>
-    <View
-      style={ Styles.viewLogin }
-    >
-      <Logo width={100} height={100} />
-
-      <Text style={ Styles.textTitle }>
-        DotNotes
-      </Text>
-
-      <Text style={ Styles.textForgetPass }>
-        Aplicativo de Anotações
-      </Text>
-
-      <TextInput
-        value={email}
-        onChangeText={setEmail}
-        placeholder="E-mail"
-        placeholderTextColor="#888"
-        style={ Styles.textInput }
-      />
-
-      <TextInput
-        value={usuario}
-        onChangeText={setUsuario}
-        placeholder="Usuário"
-        placeholderTextColor="#888"
-        style={ Styles.textInput }
-      />
-
-      <TextInput
-        value={senha}
-        onChangeText={setSenha}
-        placeholder="Senha"
-        placeholderTextColor="#888"
-        secureTextEntry
-        style={ Styles.textInput }
-      />
-      <TextInput
-        value={confsenha}
-        onChangeText={setConfSenha}
-        placeholder="Confirmar Senha"
-        placeholderTextColor="#888"
-        secureTextEntry
-        style={ Styles.textInput }
-      />
-
-      <Pressable
-        onPress={() => {}}
-        style={({ pressed }) => getButtonPrimaryStyle(pressed)}
+    <SafeArea>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={0}
       >
-        <Text style={ Styles.textButtonW }>
-          Registrar
-        </Text>
-      </Pressable>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={{ flex: 1 }}>
 
-      <Pressable
-        onPress={() => router.push("/layout/login")}
-        style={({ pressed }) => getButtonSecondaryStyle(pressed)}
-      >
-        <Text style={ Styles.textButtonB }>
-          Voltar
-        </Text>
-      </Pressable>
-    </View>
+            <View style={Styles.viewLogin}>
+              <Logo width={100} height={100} />
 
-        <View style={Styles.footer}>
-        <Text style={Styles.textForgetPass}>
-          Copyright © 2026 CaravelCorp.
-        </Text>
-      </View>
+              <Text style={Styles.textTitle}>
+                DotNotes
+              </Text>
 
-  </SafeArea>
+              <Text style={Styles.textForgetPass}>
+                Aplicativo de Anotações
+              </Text>
+
+              <TextInput
+                value={email}
+                onChangeText={setEmail}
+                placeholder="E-mail"
+                placeholderTextColor="#888"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                style={Styles.textInput}
+              />
+
+              <TextInput
+                value={usuario}
+                onChangeText={setUsuario}
+                placeholder="Usuário"
+                placeholderTextColor="#888"
+                autoCapitalize="none"
+                style={Styles.textInput}
+              />
+
+              <TextInput
+                value={senha}
+                onChangeText={setSenha}
+                placeholder="Senha"
+                placeholderTextColor="#888"
+                secureTextEntry
+                style={Styles.textInput}
+              />
+
+              <TextInput
+                value={confsenha}
+                onChangeText={setConfSenha}
+                placeholder="Confirmar Senha"
+                placeholderTextColor="#888"
+                secureTextEntry
+                style={Styles.textInput}
+              />
+
+              <Pressable
+                onPress={() => {}}
+                style={({ pressed }) =>
+                  getButtonPrimaryStyle(pressed)
+                }
+              >
+                <Text style={Styles.textButtonW}>
+                  Registrar
+                </Text>
+              </Pressable>
+
+              <Pressable
+                onPress={() => router.push("/layout/login")}
+                style={({ pressed }) =>
+                  getButtonSecondaryStyle(pressed)
+                }
+              >
+                <Text style={Styles.textButtonB}>
+                  Voltar
+                </Text>
+              </Pressable>
+            </View>
+
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
+      
+            <View style={Styles.footer}>
+              <Text style={Styles.textForgetPass}>
+                Copyright © 2026 CaravelCorp.
+              </Text>
+            </View>
+
+    </SafeArea>
   );
 }
