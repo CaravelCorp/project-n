@@ -6,12 +6,13 @@ import Styles from "@/styles/global";
 import SafeArea from "@/components/safe-area";
 import { useState } from "react";
 import { useRouter } from "expo-router";
+import LoginController from "@/services/controllers/login-controller"
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/services/firebase";
 
 export default function Login() {
-  const [usuario, setUsuario] = useState("");
+  const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   const router = useRouter();
@@ -29,30 +30,6 @@ export default function Login() {
     }
   };
 
-  const login = async () => {
-    try {
-      const response = await signInWithEmailAndPassword(
-        auth,
-        usuario,
-        senha
-      );
-
-      console.log(response.user);
-
-      Alert.alert("Sucesso", "Login realizado!");
-
-      router.replace("@/layout/home");
-
-    } catch (error) {
-      console.log(error);
-
-      Alert.alert(
-        "Erro",
-        "Email ou senha inválidos."
-      );
-    }
-  };
-
   return (
     <SafeArea>
       <View style={Styles.viewLogin}>
@@ -67,8 +44,8 @@ export default function Login() {
         </Text>
 
         <TextInput
-          value={usuario}
-          onChangeText={setUsuario}
+          value={email}
+          onChangeText={setEmail}
           placeholder="Email"
           placeholderTextColor="#888"
           style={Styles.textInput}
@@ -85,7 +62,7 @@ export default function Login() {
         />
 
         <Pressable
-          onPress={login}
+          onPress={async () => await LoginController(email, senha)}
           style={({ pressed }) => getButtonPrimaryStyle(pressed)}
         >
           <Text style={Styles.textButtonW}>

@@ -1,6 +1,7 @@
 import Logo from "@/assets/svg/Logo.svg";
 import { useState } from "react";
 import { useRouter } from "expo-router";
+import RegisterController from "@/services/controllers/register-controller";
 
 import {
   Text,
@@ -32,58 +33,6 @@ export default function Register() {
   const [confsenha, setConfSenha] = useState("");
 
   const router = useRouter();
-
-  const register = async () => {
-    if (!email || !usuario || !senha || !confsenha) {
-      Alert.alert(
-        "Erro",
-        "Preencha todos os campos."
-      );
-      return;
-    }
-
-    if (senha !== confsenha) {
-      Alert.alert(
-        "Erro",
-        "As senhas não coincidem."
-      );
-      return;
-    }
-
-    if (senha.length < 8) {
-      Alert.alert(
-        "Erro",
-        "A senha deve ter no mínimo 8 caracteres."
-      );
-      return;
-    }
-
-    try {
-      const response =
-        await createUserWithEmailAndPassword(
-          auth,
-          email,
-          senha
-        );
-
-      console.log(response.user);
-
-      Alert.alert(
-        "Sucesso",
-        "Conta criada com sucesso!"
-      );
-
-      router.push("/layout/login");
-
-    } catch (error) {
-      console.log(error);
-
-      Alert.alert(
-        "Erro",
-        "Não foi possível criar a conta."
-      );
-    }
-  };
 
   return (
     <SafeArea>
@@ -150,7 +99,7 @@ export default function Register() {
               />
 
               <Pressable
-                onPress={register}
+                onPress={async () => await RegisterController(usuario, email, senha, confsenha)}
                 style={({ pressed }) =>
                   getButtonPrimaryStyle(pressed)
                 }
