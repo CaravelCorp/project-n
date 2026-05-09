@@ -41,7 +41,7 @@ export default function Login() {
 
       Alert.alert("Sucesso", "Login realizado!");
 
-      router.replace("/layout/home");
+      router.replace("@/layout/home");
 
     } catch (error) {
       console.log(error);

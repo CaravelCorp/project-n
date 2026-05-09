@@ -1,6 +1,7 @@
 ```
 project-n
 ├─ app.json
+├─ babel.config.js
 ├─ eslint.config.js
 ├─ jsconfig.json
 ├─ LICENSE

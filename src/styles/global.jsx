@@ -5,9 +5,10 @@ const { width, height } = Dimensions.get("window");
 const Styles = StyleSheet.create({
     viewLogin: {
         flex: 1,
+        width: "100%",
         justifyContent: "center",
         alignItems: "center",
-        padding: 20,
+        paddingHorizontal: 25,
         backgroundColor: "#FFF",
     },
 
@@ -20,33 +21,33 @@ const Styles = StyleSheet.create({
     },
 
     header: {
-        width: "100%",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "flex-start",
-
-        paddingTop: height * 0.05,
-        paddingBottom: height * 0.015,
-        paddingHorizontal: width * 0.05,
+        position: "absolute",
+        top: 50,
+        left: 20,
+        zIndex: 10,
     },
+
     textButtonW: {
         fontSize: 16,
         color: "#FFF",
+        fontWeight: "bold",
     },
 
     textButtonB: {
         fontSize: 16,
         color: "#000",
+        fontWeight: "bold",
     },
 
     textInput: {
-        width: "80%",
+        width: "100%",
         borderWidth: 1,
         borderColor: "#888",
         borderRadius: 10,
         padding: 12,
         fontSize: 16,
         marginTop: 15,
+        backgroundColor: "#FFF",
     },
 
     textForgetPass: {
@@ -59,11 +60,16 @@ const Styles = StyleSheet.create({
     textTitle: {
         fontWeight: "bold",
         fontSize: 30,
+        textAlign: "center",
     },
 
     textSubTitle: {
-        fontWeight: "bold",
+        fontWeight: "500",
         fontSize: 15,
+        textAlign: "center",
+        marginTop: 10,
+        marginBottom: 25,
+        color: "#666",
     },
 
     wrapper: {
@@ -84,7 +90,10 @@ const Styles = StyleSheet.create({
         shadowColor: "#000",
         shadowOpacity: 0.1,
         shadowRadius: 10,
-        shadowOffset: { width: 0, height: 5 },
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
     },
 
     iconText: {
