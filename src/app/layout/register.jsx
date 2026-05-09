@@ -11,14 +11,21 @@ import {
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
+  Alert,
 } from "react-native";
+
+import {
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+
+import { auth } from "@/services/firebase";
 
 import getButtonPrimaryStyle from "@/styles/button-primary";
 import getButtonSecondaryStyle from "@/styles/button-secodary";
 import Styles from "@/styles/global";
 import SafeArea from "@/components/safe-area";
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
@@ -26,14 +33,72 @@ export default function Login() {
 
   const router = useRouter();
 
+  const register = async () => {
+    if (!email || !usuario || !senha || !confsenha) {
+      Alert.alert(
+        "Erro",
+        "Preencha todos os campos."
+      );
+      return;
+    }
+
+    if (senha !== confsenha) {
+      Alert.alert(
+        "Erro",
+        "As senhas não coincidem."
+      );
+      return;
+    }
+
+    if (senha.length < 8) {
+      Alert.alert(
+        "Erro",
+        "A senha deve ter no mínimo 8 caracteres."
+      );
+      return;
+    }
+
+    try {
+      const response =
+        await createUserWithEmailAndPassword(
+          auth,
+          email,
+          senha
+        );
+
+      console.log(response.user);
+
+      Alert.alert(
+        "Sucesso",
+        "Conta criada com sucesso!"
+      );
+
+      router.push("/layout/login");
+
+    } catch (error) {
+      console.log(error);
+
+      Alert.alert(
+        "Erro",
+        "Não foi possível criar a conta."
+      );
+    }
+  };
+
   return (
     <SafeArea>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        behavior={
+          Platform.OS === "ios"
+            ? "padding"
+            : "height"
+        }
         keyboardVerticalOffset={0}
       >
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <TouchableWithoutFeedback
+          onPress={Keyboard.dismiss}
+        >
           <View style={{ flex: 1 }}>
 
             <View style={Styles.viewLogin}>
@@ -85,7 +150,7 @@ export default function Login() {
               />
 
               <Pressable
-                onPress={() => {}}
+                onPress={register}
                 style={({ pressed }) =>
                   getButtonPrimaryStyle(pressed)
                 }
@@ -96,7 +161,9 @@ export default function Login() {
               </Pressable>
 
               <Pressable
-                onPress={() => router.push("/layout/login")}
+                onPress={() =>
+                  router.push("/layout/login")
+                }
                 style={({ pressed }) =>
                   getButtonSecondaryStyle(pressed)
                 }
@@ -110,12 +177,12 @@ export default function Login() {
           </View>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
-      
-            <View style={Styles.footer}>
-              <Text style={Styles.textForgetPass}>
-                Copyright © 2026 CaravelCorp.
-              </Text>
-            </View>
+
+      <View style={Styles.footer}>
+        <Text style={Styles.textForgetPass}>
+          Copyright © 2026 CaravelCorp.
+        </Text>
+      </View>
 
     </SafeArea>
   );

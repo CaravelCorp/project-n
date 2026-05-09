@@ -1,4 +1,3 @@
-
 ```
 project-n
 ├─ app.json
@@ -13,6 +12,8 @@ project-n
    ├─ app
    │  ├─ index.jsx
    │  └─ layout
+   │     ├─ forgotpass.jsx
+   │     ├─ home.jsx
    │     ├─ login.jsx
    │     └─ register.jsx
    ├─ assets
@@ -20,6 +21,8 @@ project-n
    │     └─ Logo.svg
    ├─ components
    │  └─ safe-area.jsx
+   ├─ services
+   │  └─ firebase.js
    └─ styles
       ├─ button-primary.jsx
       ├─ button-secodary.jsx

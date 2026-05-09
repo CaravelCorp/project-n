@@ -28,9 +28,7 @@ const Styles = StyleSheet.create({
         paddingTop: height * 0.05,
         paddingBottom: height * 0.015,
         paddingHorizontal: width * 0.05,
-        paddingLeft: width * 0.05,
     },
-
     textButtonW: {
         fontSize: 16,
         color: "#FFF",
