@@ -4,10 +4,18 @@ import { StatusBar } from "react-native";
 export default function SafeArea({ children }) {
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: "#fff" }}
+      style={{
+        flex: 1,
+        backgroundColor: "#FFF",
+      }}
       edges={["top", "bottom", "left", "right"]}
     >
-      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
+
       {children}
     </SafeAreaView>
   );

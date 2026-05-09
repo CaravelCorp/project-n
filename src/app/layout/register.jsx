@@ -1,6 +1,5 @@
 import Logo from "@/assets/svg/Logo.svg";
-import { Text, View, TextInput, Pressable, Linking } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { Text, View, TextInput, Pressable } from "react-native";
 import getButtonPrimaryStyle from "@/styles/button-primary";
 import getButtonSecondaryStyle from "@/styles/button-secodary";
 import Styles from "@/styles/global";
@@ -80,14 +79,14 @@ export default function Login() {
           Voltar
         </Text>
       </Pressable>
+    </View>
 
-      <View style={Styles.footer}>
+        <View style={Styles.footer}>
         <Text style={Styles.textForgetPass}>
           Copyright © 2026 CaravelCorp.
         </Text>
       </View>
 
-    </View>
   </SafeArea>
   );
 }

@@ -13,13 +13,13 @@ export default function Login() {
 
   return (
     <SafeArea>
-    <View style={Styles.header}>
+      <View style={Styles.header}>
         <Pressable onPress={() => router.back()}>
-            <Text style={{ fontSize: 30, color: "#000" }}>
-                {"<"}
-            </Text>
+          <Text style={Styles.textTitle}>
+            {"<"}
+          </Text>
         </Pressable>
-    </View>
+      </View>
       
       <View style={Styles.viewLogin}>
 

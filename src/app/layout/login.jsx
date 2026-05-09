@@ -77,6 +77,8 @@ export default function Login() {
             Esqueci minha senha
           </Text> 
         </Pressable>
+        
+      </View>
 
         <View style={Styles.footer}>
           <View style={Styles.wrapper}>
@@ -88,8 +90,7 @@ export default function Login() {
             Copyright © 2026 CaravelCorp.
           </Text>
         </View>
-        
-      </View>
+
     </SafeArea>
   );
 }

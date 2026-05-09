@@ -25,9 +25,10 @@ const Styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "flex-start",
 
-        paddingTop: height * 0.02,      // ~2% da altura da tela
-        paddingBottom: height * 0.015,  // ~1.5%
-        paddingHorizontal: width * 0.05 // ~5% da largura
+        paddingTop: height * 0.05,
+        paddingBottom: height * 0.015,
+        paddingHorizontal: width * 0.05,
+        paddingLeft: width * 0.05,
     },
 
     textButtonW: {
