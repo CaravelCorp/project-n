@@ -11,13 +11,15 @@ project-n
 └─ src
    ├─ app
    │  ├─ (auth)
-   │  ├─ (drawer)
-   │  ├─ index.jsx
-   │  ├─ layout
    │  │  ├─ forgotpass.jsx
-   │  │  ├─ home.jsx
    │  │  ├─ login.jsx
-   │  │  └─ register.jsx
+   │  │  ├─ register.jsx
+   │  │  └─ _layout.jsx
+   │  ├─ (drawer)
+   │  │  ├─ archived.jsx
+   │  │  ├─ home.jsx
+   │  │  └─ _layout.jsx
+   │  ├─ index.jsx
    │  └─ _layout.jsx
    ├─ assets
    │  └─ svg
