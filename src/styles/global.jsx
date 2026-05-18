@@ -125,32 +125,23 @@ const Styles = StyleSheet.create({
     },
     shadowOpacity: 0.15,
     shadowRadius: 4,
-},
+  },
 
-  plusButton: {
-    position: "absolute",
+  noteTitle: {
+    marginTop: 100,
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#000",
+    outlineStyle: "none",
+  },
 
-    right: 20,
-    bottom: 30,
-
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    backgroundColor: "#FFF",
-
-    elevation: 5,
-
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
+  noteContent: {
+    flex: 1,
+    marginTop: 20,
+    fontSize: 18,
+    color: "#000",
+    textAlignVertical: "top",
+    outlineStyle: "none",
   },
 
   // =========================
@@ -204,6 +195,16 @@ const Styles = StyleSheet.create({
     color: "#fff",
     fontSize: 12,
   },
+  
+  toolbar: {
+    position: "absolute",
+
+    top: 30,
+    right: 20,
+
+    flexDirection: "row",
+    alignItems: "center",
+},
   
 });
 
