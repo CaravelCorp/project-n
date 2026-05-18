@@ -1,11 +1,12 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { Drawer } from "expo-router/drawer";
+import { View } from "react-native";
 
 export default function RootLayout() {
   return (
-    <>
-      <StatusBar style="dark" />
+    <View style={{ flex: 1, backgroundColor: "#fff" }}>
+      
+      <StatusBar style="dark" backgroundColor="#fff" />
 
       <Stack
         screenOptions={{
@@ -15,6 +16,6 @@ export default function RootLayout() {
           },
         }}
       />
-    </>
+    </View>
   );
 }

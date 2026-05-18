@@ -1,126 +1,151 @@
-import { StyleSheet, Dimensions } from "react-native";
-
-const { width, height } = Dimensions.get("window");
+import { StyleSheet } from "react-native";
 
 const Styles = StyleSheet.create({
-    viewLogin: {
-        flex: 1,
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-        paddingHorizontal: 25,
-        backgroundColor: "#FFF",
-    },
 
-    footer: {
-        width: "100%",
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: "auto",
-        paddingBottom: 15,
-    },
+  // =========================
+  // LAYOUT BASE
+  // =========================
+  container: {
+    flex: 1,
+    backgroundColor: "#FFF",
+    paddingHorizontal: 25,
+  },
 
-    header: {
-        position: "absolute",
-        top: 50,
-        left: 20,
-        zIndex: 10,
-    },
+  viewLogin: {
+    flex: 1,
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 25,
+    backgroundColor: "#FFF",
+  },
 
-    headerHome: {
-        position: "absolute",
-        top: 50,
-        left: 20,
-        zIndex: 10,
-        textAlign: "flex-start",
-    },
+  footer: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "auto",
+    paddingBottom: 15,
+  },
 
-    textButtonW: {
-        fontSize: 16,
-        color: "#FFF",
-        fontWeight: "bold",
-    },
+  headerHome: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+    zIndex: 10,
+  },
 
-    textButtonB: {
-        fontSize: 16,
-        color: "#000",
-        fontWeight: "bold",
-    },
+  // =========================
+  // TEXTOS
+  // =========================
+  textTitle: {
+    fontWeight: "bold",
+    fontSize: 30,
+    textAlign: "center",
+  },
 
-    textInput: {
-        width: "100%",
-        borderWidth: 1,
-        borderColor: "#888",
-        borderRadius: 10,
-        padding: 12,
-        fontSize: 16,
-        marginTop: 15,
-        backgroundColor: "#FFF",
-    },
+  textSubTitle: {
+    fontWeight: "500",
+    fontSize: 15,
+    textAlign: "center",
+    marginTop: 10,
+    marginBottom: 25,
+    color: "#666",
+  },
 
-    textForgetPass: {
-        color: "#888",
-        fontSize: 15,
-        margin: 15,
-        textAlign: "center",
-    },
+  textForgetPass: {
+    color: "#888",
+    fontSize: 15,
+    margin: 15,
+    textAlign: "center",
+  },
 
-    textTitle: {
-        fontWeight: "bold",
-        fontSize: 30,
-        textAlign: "center",
-    },
+  textButtonW: {
+    fontSize: 16,
+    color: "#FFF",
+    fontWeight: "bold",
+  },
 
-    textSubTitle: {
-        fontWeight: "500",
-        fontSize: 15,
-        textAlign: "center",
-        marginTop: 10,
-        marginBottom: 25,
-        color: "#666",
-    },
+  textButtonB: {
+    fontSize: 16,
+    color: "#000",
+    fontWeight: "bold",
+  },
 
-    wrapper: {
-        flexDirection: "row",
-        justifyContent: "center",
-        marginTop: 20,
-    },
+  // =========================
+  // INPUT
+  // =========================
+  textInput: {
+    width: "100%",
+    borderWidth: 1,
+    borderColor: "#888",
+    borderRadius: 10,
+    padding: 12,
+    fontSize: 16,
+    marginTop: 15,
+    backgroundColor: "#FFF",
+  },
 
-    icon: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-        backgroundColor: "#fff",
-        justifyContent: "center",
-        alignItems: "center",
-        margin: 10,
-        elevation: 5,
-        shadowColor: "#000",
-        shadowOpacity: 0.1,
-        shadowRadius: 10,
-        shadowOffset: {
-            width: 0,
-            height: 5,
-        },
-    },
+  // =========================
+  // ICONS
+  // =========================
+  wrapper: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: 20,
+  },
 
-    iconText: {
-        fontSize: 18,
-        color: "#000",
-    },
+  icon: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 10,
+    elevation: 5,
+  },
 
-    tooltip: {
-        position: "absolute",
-        top: -45,
-        paddingHorizontal: 8,
-        paddingVertical: 5,
-        borderRadius: 5,
-    },
+  iconText: {
+    fontSize: 18,
+    color: "#000",
+  },
 
-    tooltipText: {
-        color: "#fff",
-        fontSize: 12,
-    },
+  tooltip: {
+    position: "absolute",
+    top: -45,
+    paddingHorizontal: 8,
+    paddingVertical: 5,
+    borderRadius: 5,
+  },
+
+  tooltipText: {
+    color: "#fff",
+    fontSize: 12,
+  },
+  
 });
+
+
+// =========================
+// NAVIGATION CONFIG
+// =========================
+
+export const drawerScreenOptions = {
+  headerShown: false,
+
+  sceneStyle: {
+    backgroundColor: "#fff",
+  },
+
+  drawerStyle: {
+    backgroundColor: "#fff",
+    width: 250,
+  },
+
+  drawerActiveTintColor: "#000",
+  drawerInactiveTintColor: "#666",
+};
+
 
 export default Styles;
