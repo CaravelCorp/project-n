@@ -111,7 +111,7 @@ export default function Register() {
 
               <Pressable
                 onPress={() =>
-                  router.back("/layout/login")
+                  router.back()
                 }
                 style={({ pressed }) =>
                   getButtonSecondaryStyle(pressed)

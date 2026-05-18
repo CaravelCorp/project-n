@@ -10,12 +10,15 @@ project-n
 ├─ README.md
 └─ src
    ├─ app
+   │  ├─ (auth)
+   │  ├─ (drawer)
    │  ├─ index.jsx
-   │  └─ layout
-   │     ├─ forgotpass.jsx
-   │     ├─ home.jsx
-   │     ├─ login.jsx
-   │     └─ register.jsx
+   │  ├─ layout
+   │  │  ├─ forgotpass.jsx
+   │  │  ├─ home.jsx
+   │  │  ├─ login.jsx
+   │  │  └─ register.jsx
+   │  └─ _layout.jsx
    ├─ assets
    │  └─ svg
    │     └─ Logo.svg

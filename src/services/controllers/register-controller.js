@@ -54,7 +54,7 @@ export default async function RegisterController(
         {
           text: "OK",
           onPress: () =>
-            router.replace("/layout/login"),
+            router.replace("/login"),
         },
       ]
     );

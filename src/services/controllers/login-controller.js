@@ -1,28 +1,31 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/services/firebase";
-import { Alert } from "react-native";
-import { router } from "expo-router";
 
-export default async function LoginController(email, senha){
-    try {
-        const response = await signInWithEmailAndPassword(
-            auth,
-            email,
-            senha
-        );
+export default async function LoginController(email, senha) {
 
-        console.log(response.user);
+  if (!email || !senha) {
+    return {
+      success: false,
+      error: "Preencha todos os campos",
+    };
+  }
 
-        Alert.alert("Sucesso", "Login realizado!");
+  try {
+    const response = await signInWithEmailAndPassword(
+      auth,
+      email,
+      senha
+    );
 
-        router.replace("/layout/home");
+    return {
+      success: true,
+      user: response.user,
+    };
 
-        } catch (error) {
-        console.log(error);
-
-        Alert.alert(
-            "Erro",
-            "Email ou senha inválidos."
-        );
-    }
+  } catch (error) {
+    return {
+      success: false,
+      error: "Email ou senha inválidos",
+    };
+  }
 }

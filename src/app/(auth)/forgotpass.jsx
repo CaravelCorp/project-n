@@ -61,7 +61,7 @@ export default function ForgotPass() {
 
         <Pressable
           onPress={() =>
-            router.back("/layout/login")
+            router.back()
           }
           style={({ pressed }) =>
             getButtonSecondaryStyle(pressed)
