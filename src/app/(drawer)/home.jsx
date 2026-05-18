@@ -1,18 +1,21 @@
+import { View, Pressable, Text } from "react-native";
+
 import { Feather } from "@expo/vector-icons";
-import { useRouter, useNavigation } from "expo-router";
+
+import { useNavigation } from "expo-router";
+
 import { DrawerActions } from "@react-navigation/native";
-import { View, Pressable } from "react-native";
 
 import Styles from "@/styles/global";
+
 import SafeArea from "@/components/safe-area";
 
 export default function Home() {
-  const router = useRouter();
   const navigation = useNavigation();
 
   return (
     <SafeArea>
-      <View style={Styles.headerHome}>
+      <View style={Styles.container}>
 
         <Pressable
           style={Styles.menuButton}
@@ -27,10 +30,24 @@ export default function Home() {
           />
         </Pressable>
 
-      </View>
+        <View style={Styles.content}>
+          <Text style={Styles.textTitleHome}>
+            Notas
+          </Text>
 
-      <View style={Styles.viewLogin}>
-        {/* conteúdo da home */}
+          <Text style={Styles.textSubTitleHome}>
+            Você não possui nenhuma anotação, crie a sua primeira anotação clicando no botão abaixo!
+          </Text>
+        </View>
+
+        <Pressable style={Styles.plusButton}>
+          <Feather
+            name="plus"
+            size={28}
+            color="#000"
+          />
+        </Pressable>
+
       </View>
     </SafeArea>
   );

@@ -20,6 +20,11 @@ const Styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
 
+  viewLayout: {
+    flex: 1,
+    backgroundColor: "#FFF",
+  },
+
   footer: {
     width: "100%",
     alignItems: "center",
@@ -35,6 +40,12 @@ const Styles = StyleSheet.create({
     zIndex: 10,
   },
 
+  content: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
   // =========================
   // TEXTOS
   // =========================
@@ -44,6 +55,13 @@ const Styles = StyleSheet.create({
     textAlign: "center",
   },
 
+  textTitleHome: {
+    fontWeight: "bold",
+    fontSize: 30,
+    textAlign: "center",
+    opacity: 0.5,
+  },
+
   textSubTitle: {
     fontWeight: "500",
     fontSize: 15,
@@ -51,6 +69,17 @@ const Styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 25,
     color: "#666",
+
+  },
+
+textSubTitleHome: {
+    fontWeight: "500",
+    fontSize: 15,
+    textAlign: "center",
+    marginTop: 10,
+    marginBottom: 25,
+    color: "#666",
+    opacity: 0.5,
   },
 
   textForgetPass: {
@@ -71,6 +100,58 @@ const Styles = StyleSheet.create({
     color: "#000",
     fontWeight: "bold",
   },
+
+menuButton: {
+  position: "absolute",
+
+  left: 20,
+  top: 30,
+
+  width: 56,
+  height: 56,
+  borderRadius: 28,
+
+  justifyContent: "center",
+  alignItems: "center",
+
+  backgroundColor: "#FFF",
+
+  elevation: 5,
+
+  shadowColor: "#000",
+  shadowOffset: {
+    width: 0,
+    height: 2,
+  },
+  shadowOpacity: 0.15,
+  shadowRadius: 4,
+},
+
+plusButton: {
+  position: "absolute",
+
+  right: 20,
+  bottom: 30,
+
+  width: 56,
+  height: 56,
+  borderRadius: 28,
+
+  justifyContent: "center",
+  alignItems: "center",
+
+  backgroundColor: "#FFF",
+
+  elevation: 5,
+
+  shadowColor: "#000",
+  shadowOffset: {
+    width: 0,
+    height: 2,
+  },
+  shadowOpacity: 0.15,
+  shadowRadius: 4,
+},
 
   // =========================
   // INPUT
