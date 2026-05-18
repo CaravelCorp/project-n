@@ -53,7 +53,7 @@ export default function Register() {
             <View style={Styles.viewLogin}>
               <Logo width={100} height={100} />
 
-              <Text style={Styles.textTitle}>
+              <Text style={Styles.textTitleB}>
                 DotNotes
               </Text>
 
@@ -111,7 +111,7 @@ export default function Register() {
 
               <Pressable
                 onPress={() =>
-                  router.push("/layout/login")
+                  router.back("/layout/login")
                 }
                 style={({ pressed }) =>
                   getButtonSecondaryStyle(pressed)

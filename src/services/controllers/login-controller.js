@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/services/firebase";
 import { Alert } from "react-native";
-
+import { router } from "expo-router";
 
 export default async function LoginController(email, senha){
     try {
@@ -15,7 +15,7 @@ export default async function LoginController(email, senha){
 
         Alert.alert("Sucesso", "Login realizado!");
 
-        router.replace("@/layout/home");
+        router.replace("/layout/home");
 
         } catch (error) {
         console.log(error);

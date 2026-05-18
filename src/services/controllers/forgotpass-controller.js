@@ -1,8 +1,8 @@
 import { sendPasswordResetEmail } from "firebase/auth";
 import { Alert } from "react-native";
 import { auth } from "@/services/firebase";
+import { router } from "expo-router";
 
- 
  export default async function ForgotPassController(email){
         if (!email.trim()) {
       Alert.alert(

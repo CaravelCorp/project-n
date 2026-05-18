@@ -3,7 +3,6 @@ project-n
 ├─ app.json
 ├─ babel.config.js
 ├─ eslint.config.js
-├─ jsconfig.json
 ├─ LICENSE
 ├─ metro.config.js
 ├─ package-lock.json
@@ -23,6 +22,10 @@ project-n
    ├─ components
    │  └─ safe-area.jsx
    ├─ services
+   │  ├─ controllers
+   │  │  ├─ forgotpass-controller.js
+   │  │  ├─ login-controller.js
+   │  │  └─ register-controller.js
    │  └─ firebase.js
    └─ styles
       ├─ button-primary.jsx

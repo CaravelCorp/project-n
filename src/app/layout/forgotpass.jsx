@@ -16,6 +16,7 @@ import {
 import { auth } from "@/services/firebase";
 
 import getButtonPrimaryStyle from "@/styles/button-primary";
+import getButtonSecondaryStyle from "@/styles/button-secodary"; 
 import Styles from "@/styles/global";
 import SafeArea from "@/components/safe-area";
 
@@ -26,14 +27,6 @@ export default function ForgotPass() {
 
   return (
     <SafeArea>
-
-      <View style={Styles.header}>
-        <Pressable onPress={() => router.back()}>
-          <Text style={Styles.textTitle}>
-            {"<"}
-          </Text>
-        </Pressable>
-      </View>
 
       <View style={Styles.viewLogin}>
 
@@ -66,7 +59,21 @@ export default function ForgotPass() {
           </Text>
         </Pressable>
 
+        <Pressable
+          onPress={() =>
+            router.back("/layout/login")
+          }
+          style={({ pressed }) =>
+            getButtonSecondaryStyle(pressed)
+          }
+        >
+          <Text style={Styles.textButtonB}>
+            Voltar
+          </Text>
+        </Pressable>
+
       </View>
+
     </SafeArea>
   );
 }

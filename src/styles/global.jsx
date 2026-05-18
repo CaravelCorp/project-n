@@ -27,6 +27,14 @@ const Styles = StyleSheet.create({
         zIndex: 10,
     },
 
+    headerHome: {
+        position: "absolute",
+        top: 50,
+        left: 20,
+        zIndex: 10,
+        textAlign: "flex-start",
+    },
+
     textButtonW: {
         fontSize: 16,
         color: "#FFF",
