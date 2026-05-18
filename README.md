@@ -19,6 +19,8 @@ project-n
    │  │  ├─ archived.jsx
    │  │  ├─ home.jsx
    │  │  └─ _layout.jsx
+   │  ├─ constants
+   │  │  └─ messages.jsx
    │  ├─ index.jsx
    │  └─ _layout.jsx
    ├─ assets

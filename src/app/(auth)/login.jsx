@@ -16,6 +16,7 @@ import SafeArea from "@/components/safe-area";
 import { useState } from "react";
 import { useRouter } from "expo-router";
 import LoginController from "@/services/controllers/login-controller";
+import { mensagemAleatoria } from "@/constants/messages";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -52,7 +53,7 @@ export default function Login() {
         <Text style={Styles.textTitle}>DotNotes</Text>
 
         <Text style={Styles.textForgetPass}>
-          Aplicativo de Anotações
+          {mensagemAleatoria}
         </Text>
 
         <TextInput

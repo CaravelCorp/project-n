@@ -72,7 +72,7 @@ const Styles = StyleSheet.create({
 
   },
 
-textSubTitleHome: {
+  textSubTitleHome: {
     fontWeight: "500",
     fontSize: 15,
     textAlign: "center",
@@ -101,57 +101,57 @@ textSubTitleHome: {
     fontWeight: "bold",
   },
 
-menuButton: {
-  position: "absolute",
+  menuButton: {
+    position: "absolute",
 
-  left: 20,
-  top: 30,
+    left: 20,
+    top: 30,
 
-  width: 56,
-  height: 56,
-  borderRadius: 28,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
 
-  justifyContent: "center",
-  alignItems: "center",
+    justifyContent: "center",
+    alignItems: "center",
 
-  backgroundColor: "#FFF",
+    backgroundColor: "#FFF",
 
-  elevation: 5,
+    elevation: 5,
 
-  shadowColor: "#000",
-  shadowOffset: {
-    width: 0,
-    height: 2,
-  },
-  shadowOpacity: 0.15,
-  shadowRadius: 4,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
 },
 
-plusButton: {
-  position: "absolute",
+  plusButton: {
+    position: "absolute",
 
-  right: 20,
-  bottom: 30,
+    right: 20,
+    bottom: 30,
 
-  width: 56,
-  height: 56,
-  borderRadius: 28,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
 
-  justifyContent: "center",
-  alignItems: "center",
+    justifyContent: "center",
+    alignItems: "center",
 
-  backgroundColor: "#FFF",
+    backgroundColor: "#FFF",
 
-  elevation: 5,
+    elevation: 5,
 
-  shadowColor: "#000",
-  shadowOffset: {
-    width: 0,
-    height: 2,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
   },
-  shadowOpacity: 0.15,
-  shadowRadius: 4,
-},
 
   // =========================
   // INPUT
