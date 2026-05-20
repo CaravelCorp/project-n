@@ -10,6 +10,7 @@ import {
 
 import { FontAwesome } from "@expo/vector-icons";
 import getButtonPrimaryStyle from "@/styles/button-primary";
+import getButtonSecondaryStyle from "@/styles/button-secodary";
 import Styles from "@/styles/global";
 import SafeArea from "@/components/safe-area";
 
@@ -88,10 +89,10 @@ export default function Login() {
         <Pressable
           onPress={() => router.push("/register")}
           style={({ pressed }) =>
-            getButtonPrimaryStyle(pressed)
+            getButtonSecondaryStyle(pressed)
           }
         >
-          <Text style={Styles.textButtonW}>
+          <Text style={Styles.textButtonB}>
             Registrar
           </Text>
         </Pressable>

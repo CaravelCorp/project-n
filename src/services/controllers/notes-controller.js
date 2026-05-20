@@ -12,7 +12,7 @@ import {
    serverTimestamp,
 } from "firebase/firestore";
 
-import { db } from "../firebase";
+import { db } from "@/services/firebase";
 
 function stripHtml(html = "") {
 
@@ -329,7 +329,7 @@ export async function archiveNote(
    }
 }
 
-export async function removeEmptyDraft(
+/* export async function removeEmptyDraft(
 
    uid,
    noteId,
@@ -354,4 +354,4 @@ export async function removeEmptyDraft(
          noteId
       );
    }
-}
+} */

@@ -60,27 +60,8 @@ export default function Home() {
 
     return (
 
-      <Pressable
-
-        style={{
-
-          backgroundColor: "#FFF",
-
-          padding: 16,
-
-          borderRadius: 12,
-
-          marginBottom: 12,
-
-          borderWidth: 1,
-
-          borderColor: "#EEE",
-        }}
-
-        onPress={() =>
-          router.push({
+      <Pressable style={getNoteButtonStyles} onPress={() => router.push({
             pathname: "/create-note",
-
             params: {
               id: item.id,
             },
@@ -89,22 +70,14 @@ export default function Home() {
       >
 
         <Text
-          style={{
-            fontSize: 18,
-            fontWeight: "600",
-            marginBottom: 8,
-          }}
+          style={Styles.textTitle}
         >
           {item.title || "Sem título"}
         </Text>
 
         <Text
           numberOfLines={2}
-
-          style={{
-            color: "#666",
-            fontSize: 15,
-          }}
+          style={Styles.textSubTitle}
         >
           {item.preview || "Nota vazia"}
         </Text>
@@ -167,10 +140,7 @@ export default function Home() {
 
               renderItem={renderItem}
 
-              contentContainerStyle={{
-                paddingTop: 24,
-                paddingBottom: 120,
-              }}
+              contentContainerStyle={Styles.notesListContent}
 
               showsVerticalScrollIndicator={
                 false

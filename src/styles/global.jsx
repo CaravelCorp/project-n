@@ -143,6 +143,16 @@ const Styles = StyleSheet.create({
     textAlignVertical: "top",
     outlineStyle: "none",
   },
+  notesListContent: {
+    paddingTop: 24,
+    paddingBottom: 120,
+  },
+
+/*   textNote: {
+    fontSize: 18,
+    fontWeight: "600",
+    marginBottom: 8,
+  }, */
 
   // =========================
   // INPUT
