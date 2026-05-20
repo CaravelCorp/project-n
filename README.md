@@ -19,8 +19,8 @@ project-n
    │  │  ├─ archived.jsx
    │  │  ├─ home.jsx
    │  │  └─ _layout.jsx
-   │  ├─ constants
-   │  │  └─ messages.jsx
+   │  ├─ (stack)
+   │  │  └─ create-note.jsx
    │  ├─ index.jsx
    │  └─ _layout.jsx
    ├─ assets
@@ -28,15 +28,23 @@ project-n
    │     └─ Logo.svg
    ├─ components
    │  └─ safe-area.jsx
+   ├─ constants
+   │  └─ messages.jsx
    ├─ services
    │  ├─ controllers
    │  │  ├─ forgotpass-controller.js
    │  │  ├─ login-controller.js
+   │  │  ├─ notes-controller.js
    │  │  └─ register-controller.js
    │  └─ firebase.js
    └─ styles
+      ├─ back-button.jsx
+      ├─ bold-button.jsx
       ├─ button-primary.jsx
       ├─ button-secodary.jsx
-      └─ global.jsx
+      ├─ global.jsx
+      ├─ italic-button.jsx
+      ├─ menu-button.jsx
+      └─ plus-button.jsx
 
 ```
