@@ -329,7 +329,7 @@ export async function archiveNote(
    }
 }
 
-/* export async function removeEmptyDraft(
+export async function removeEmptyDraft(
 
    uid,
    noteId,
@@ -354,4 +354,4 @@ export async function archiveNote(
          noteId
       );
    }
-} */
+}

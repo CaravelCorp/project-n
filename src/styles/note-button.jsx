@@ -11,3 +11,5 @@ const getNoteButtonStyles = (pressed) => ({
 
     borderColor: "#EEE",
 });
+
+export default getNoteButtonStyles;

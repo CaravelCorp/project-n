@@ -7,6 +7,9 @@ const getmenuButtonStyle = (pressed) => ({
   width: 56,
   height: 56,
   borderRadius: 28,
+  position: "absolute",
+  zIndex: 999,
+  elevation: 999,
 
   justifyContent: "center",
   alignItems: "center",

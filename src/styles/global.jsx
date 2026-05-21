@@ -120,8 +120,8 @@ const Styles = StyleSheet.create({
 
     shadowColor: "#000",
     shadowOffset: {
-      width: 0,
-      height: 2,
+    width: 0,
+    height: 2,
     },
     shadowOpacity: 0.15,
     shadowRadius: 4,
@@ -144,15 +144,9 @@ const Styles = StyleSheet.create({
     outlineStyle: "none",
   },
   notesListContent: {
-    paddingTop: 24,
+    paddingTop: 50,
     paddingBottom: 120,
   },
-
-/*   textNote: {
-    fontSize: 18,
-    fontWeight: "600",
-    marginBottom: 8,
-  }, */
 
   // =========================
   // INPUT
