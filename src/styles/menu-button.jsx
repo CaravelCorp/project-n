@@ -1,5 +1,4 @@
 const getmenuButtonStyle = (pressed) => ({
-  position: "absolute",
 
   left: 20,
   top: 30,

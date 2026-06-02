@@ -8,7 +8,7 @@ const Styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFF",
-    paddingHorizontal: 25,
+    paddingHorizontal: 20,
   },
 
   viewLogin: {
@@ -44,6 +44,7 @@ const Styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    paddingHorizontal: 20,
   },
 
   // =========================
@@ -53,13 +54,15 @@ const Styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 30,
     textAlign: "center",
+    color: "#000",
   },
 
   textTitleHome: {
     fontWeight: "bold",
     fontSize: 30,
     textAlign: "center",
-    opacity: 0.5,
+    opacity: 0.6,
+    color: "#000",
   },
 
   textSubTitle: {
@@ -69,7 +72,6 @@ const Styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 25,
     color: "#666",
-
   },
 
   textSubTitleHome: {
@@ -78,8 +80,8 @@ const Styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 10,
     marginBottom: 25,
-    color: "#666",
-    opacity: 0.5,
+    color: "#777",
+    opacity: 0.8,
   },
 
   textForgetPass: {
@@ -101,51 +103,59 @@ const Styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
+  // =========================
+  // HOME MENU BUTTON
+  // =========================
   menuButton: {
     position: "absolute",
-
     left: 20,
-    top: 30,
-
+    top: 40,
     width: 56,
     height: 56,
     borderRadius: 28,
-
     justifyContent: "center",
     alignItems: "center",
-
     backgroundColor: "#FFF",
-
     elevation: 5,
-
     shadowColor: "#000",
-    shadowOffset: {
-    width: 0,
-    height: 2,
-    },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.15,
     shadowRadius: 4,
+    zIndex: 10,
   },
 
+  // =========================
+  // NOTE EDIT SCREEN
+  // =========================
   noteTitle: {
-    marginTop: 100,
-    fontSize: 32,
+    marginTop: 90,
+    fontSize: 28,
     fontWeight: "bold",
     color: "#000",
-    outlineStyle: "none",
+    paddingVertical: 10,
   },
 
   noteContent: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 15,
     fontSize: 18,
     color: "#000",
     textAlignVertical: "top",
-    outlineStyle: "none",
   },
+
   notesListContent: {
-    paddingTop: 50,
+    paddingTop: 80,
     paddingBottom: 120,
+  },
+
+  toolbar: {
+    position: "absolute",
+    top: 30,
+    right: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    zIndex: 10,
   },
 
   // =========================
@@ -154,7 +164,7 @@ const Styles = StyleSheet.create({
   textInput: {
     width: "100%",
     borderWidth: 1,
-    borderColor: "#888",
+    borderColor: "#DDD",
     borderRadius: 10,
     padding: 12,
     fontSize: 16,
@@ -199,24 +209,12 @@ const Styles = StyleSheet.create({
     color: "#fff",
     fontSize: 12,
   },
-  
-  toolbar: {
-    position: "absolute",
-
-    top: 30,
-    right: 20,
-
-    flexDirection: "row",
-    alignItems: "center",
-},
-  
 });
 
 
 // =========================
 // NAVIGATION CONFIG
 // =========================
-
 export const drawerScreenOptions = {
   headerShown: false,
 
@@ -232,6 +230,5 @@ export const drawerScreenOptions = {
   drawerActiveTintColor: "#000",
   drawerInactiveTintColor: "#666",
 };
-
 
 export default Styles;

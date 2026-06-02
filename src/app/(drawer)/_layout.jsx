@@ -4,8 +4,15 @@ import Styles, { drawerScreenOptions } from "@/styles/global";
 
 export default function DrawerLayout() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <Drawer screenOptions={drawerScreenOptions} />
+    <SafeAreaView style={{ flex: 1 }} edges={["top", "left", "right"]}>
+      <Drawer
+        screenOptions={{
+          ...drawerScreenOptions,
+          drawerStyle: {
+            backgroundColor: "#fff", // ou transparente se quiser efeito total
+          },
+        }}
+      />
     </SafeAreaView>
   );
 }

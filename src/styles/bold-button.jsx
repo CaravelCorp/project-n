@@ -1,4 +1,5 @@
 const getboldButtonStyle = (pressed) => ({
+  
   width: 56,
   height: 56,
   borderRadius: 28,

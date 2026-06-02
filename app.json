@@ -7,27 +7,23 @@
     "scheme": "projectn",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-
     "ios": {
       "supportsTablet": true
     },
-
     "android": {
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "softwareKeyboardLayoutMode": "resize"
     },
-
     "web": {
       "output": "static"
     },
-
     "plugins": [
       "expo-router",
       "expo-font",
-      "expo-web-browser"
+      "expo-web-browser",
+      "expo-sqlite"
     ],
-
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true

@@ -30,11 +30,12 @@ project-n
    │  └─ safe-area.jsx
    ├─ constants
    │  └─ messages.jsx
+   ├─ database
+   │  └─ notesDB.js
    ├─ services
    │  ├─ controllers
    │  │  ├─ forgotpass-controller.js
    │  │  ├─ login-controller.js
-   │  │  ├─ notes-controller.js
    │  │  └─ register-controller.js
    │  └─ firebase.js
    └─ styles
@@ -45,6 +46,7 @@ project-n
       ├─ global.jsx
       ├─ italic-button.jsx
       ├─ menu-button.jsx
+      ├─ note-button.jsx
       └─ plus-button.jsx
 
 ```
