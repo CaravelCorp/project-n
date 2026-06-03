@@ -4,7 +4,6 @@ import {
   View,
   TextInput,
   Pressable,
-  Alert,
   Linking,
 } from "react-native";
 
@@ -23,26 +22,43 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
+  const [feedback, setFeedback] = useState({
+    message: "",
+    type: "", // "success" | "error"
+  });
+
   const router = useRouter();
 
   const openInstagram = async () => {
     const url = "https://www.instagram.com/arcan_studio_tattoo/";
-
-    const canOpen = await Linking.canOpenURL(url);
-
-    if (canOpen) {
-      await Linking.openURL(url);
-    }
+    await Linking.openURL(url);
   };
 
   async function handleLogin() {
-    const result = await LoginController(email, senha);
+    if (loading) return;
+
+    setLoading(true);
+
+    const result = await LoginController(email.trim(), senha);
+
+    setLoading(false);
 
     if (result.success) {
-      Alert.alert("Sucesso", "Login realizado!");
-      router.replace("/home");
+      setFeedback({
+        message: "Login realizado com sucesso!",
+        type: "success",
+      });
+
+      setTimeout(() => {
+        router.replace("/home");
+      }, 1000);
     } else {
-      Alert.alert("Erro", result.error);
+      setFeedback({
+        message: result.error,
+        type: "error",
+      });
     }
   }
 
@@ -56,6 +72,34 @@ export default function Login() {
         <Text style={Styles.textForgetPass}>
           {mensagemAleatoria}
         </Text>
+
+        {feedback.message ? (
+          <View
+            style={{
+              backgroundColor:
+                feedback.type === "success"
+                  ? "#d1fae5"
+                  : "#fee2e2",
+              padding: 10,
+              borderRadius: 8,
+              marginVertical: 10,
+              width: "100%",
+            }}
+          >
+            <Text
+              style={{
+                color:
+                  feedback.type === "success"
+                    ? "#065f46"
+                    : "#991b1b",
+                fontWeight: "600",
+                textAlign: "center",
+              }}
+            >
+              {feedback.message}
+            </Text>
+          </View>
+        ) : null}
 
         <TextInput
           value={email}
@@ -77,12 +121,13 @@ export default function Login() {
 
         <Pressable
           onPress={handleLogin}
+          disabled={loading}
           style={({ pressed }) =>
             getButtonPrimaryStyle(pressed)
           }
         >
           <Text style={Styles.textButtonW}>
-            Entrar
+            {loading ? "Entrando..." : "Entrar"}
           </Text>
         </Pressable>
 
@@ -98,9 +143,7 @@ export default function Login() {
         </Pressable>
 
         <Pressable
-          onPress={() =>
-            router.push("/forgotpass")
-          }
+          onPress={() => router.push("/forgotpass")}
         >
           <Text style={Styles.textForgetPass}>
             Esqueci minha senha

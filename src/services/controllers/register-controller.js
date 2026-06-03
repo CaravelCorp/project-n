@@ -1,7 +1,5 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { Alert } from "react-native";
 import { auth } from "@/services/firebase";
-import { router } from "expo-router";
 
 export default async function RegisterController(
   usuario,
@@ -9,96 +7,77 @@ export default async function RegisterController(
   senha,
   confsenha
 ) {
-
   if (
     !usuario.trim() ||
     !email.trim() ||
     !senha.trim() ||
     !confsenha.trim()
   ) {
-    Alert.alert(
-      "Erro",
-      "Preencha todos os campos."
-    );
-    return;
+    return {
+      success: false,
+      error: "Preencha todos os campos.",
+    };
   }
 
   if (senha !== confsenha) {
-    Alert.alert(
-      "Erro",
-      "As senhas não coincidem."
-    );
-    return;
+    return {
+      success: false,
+      error: "As senhas não coincidem.",
+    };
   }
 
   if (senha.length < 8) {
-    Alert.alert(
-      "Erro",
-      "A senha deve ter no mínimo 8 caracteres."
-    );
-    return;
+    return {
+      success: false,
+      error: "A senha deve ter no mínimo 8 caracteres.",
+    };
   }
 
   try {
-
-    await createUserWithEmailAndPassword(
+    const response = await createUserWithEmailAndPassword(
       auth,
       email.trim(),
       senha
     );
 
-    Alert.alert(
-      "Sucesso",
-      "Usuário cadastrado com sucesso!",
-      [
-        {
-          text: "OK",
-          onPress: () =>
-            router.replace("/login"),
-        },
-      ]
-    );
+    return {
+      success: true,
+      user: response.user,
+    };
 
   } catch (error) {
-
     console.log(error);
 
     switch (error.code) {
-
       case "auth/email-already-in-use":
-        Alert.alert(
-          "Erro",
-          "Esse email já está em uso."
-        );
-        break;
+        return {
+          success: false,
+          error: "Esse email já está em uso.",
+        };
 
       case "auth/invalid-email":
-        Alert.alert(
-          "Erro",
-          "Email inválido."
-        );
-        break;
+        return {
+          success: false,
+          error: "Email inválido.",
+        };
 
       case "auth/weak-password":
-        Alert.alert(
-          "Erro",
-          "A senha é muito fraca."
-        );
-        break;
+        return {
+          success: false,
+          error: "A senha é muito fraca.",
+        };
 
       case "auth/network-request-failed":
-        Alert.alert(
-          "Erro",
-          "Sem conexão com a internet."
-        );
-        break;
+        return {
+          success: false,
+          error: "Sem conexão com a internet.",
+        };
 
       default:
-        Alert.alert(
-          "Erro",
-          "Não foi possível cadastrar o usuário."
-        );
-        break;
+        return {
+          success: false,
+          error: "Não foi possível cadastrar o usuário.",
+        };
     }
   }
 }
